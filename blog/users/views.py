@@ -233,7 +233,7 @@ class ForgetPasswordView(View):
             user=User.objects.get(mobile=mobile)
         except User.DoesNotExist:
           try:
-           user=User.objects.create_user(username=mobile, mobile=mobile, password=password)
+             user=User.objects.create_user(username=mobile, mobile=mobile, password=password)
           except Exception:
             return HttpResponseBadRequest('修改失败')
           # 若无，创建新用户
@@ -301,7 +301,6 @@ class WriteBlogView(LoginRequiredMixin, View):
 
     def post(self, request):
 
-
         # 接收数据
         avatar = request.FILES.get('avatar')
         title = request.POST.get('title')
@@ -314,12 +313,12 @@ class WriteBlogView(LoginRequiredMixin, View):
         # 验证数据
         # 验证参数是否齐全
         if not all([avatar, title, category_id, sumary, content]):
-            return HttpResponseBadRequest('参数不全呀')
+            return HttpResponseBadRequest('参数不全')
         # 判断分类id
         try:
             category = ArticleCategory.objects.get(id=category_id)
         except ArticleCategory.DoesNotExist:
-            return HttpResponseBadRequest('没有此分类呢')
+            return HttpResponseBadRequest('没有此分类')
         # 数据入库
         try:
             article = Article.objects.create(
@@ -333,7 +332,7 @@ class WriteBlogView(LoginRequiredMixin, View):
             )
         except Exception as e:
             logger.error(e)
-            return HttpResponseBadRequest('发布失败了哈哈哈，请稍后再试')
+            return HttpResponseBadRequest('发布失败，请稍后再试')
         # 跳转到指页面
         return redirect(reverse('home:index'))
 

@@ -19,5 +19,5 @@ urlpatterns =[
     # 个人中心
     path('center/', UserCenterView.as_view(), name='center'),
     # 写博客的路由
-    path('writeblog/',WriteBlogView.as_view(),name='writeblog'),
+    path('writeblog/', WriteBlogView.as_view(),name='writeblog'),
 ]

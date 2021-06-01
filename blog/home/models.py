@@ -54,14 +54,13 @@ class Article(models.Model):
         return self.title
 
 class Comment(models.Model):
-
-    # 评论内容
+    # 评论的内容
     content = models.TextField()
-    # 评论的文章
+    # 文章
     article = models.ForeignKey(Article, on_delete=models.SET_NULL, null=True)
-    # 评论的用户
+    # 用户
     user = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True)
-    # 评论的时间
+    # 时间
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
