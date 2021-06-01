@@ -13,9 +13,31 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# from django.contrib import admin
-from django.urls import path
+#导入日志器
+import logging
+#获取日志器
+# logger=logging.getLogger('django')
+# # from django.contrib import admin
+# from django.urls import path
+# from django.http import  HttpResponse
+# def log(request):
+#     #使用日志器记录信息
+#     logger.info('info')
+#     return HttpResponse('test')
+from django.contrib import admin
+from django.urls import include, path
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
+    #设置元组
+    #urlconf_module 子应用路由
+    #app_name 子应用名字
+    #namespase 命名空间
+    path('', include(('users.urls', 'users'), namespace='users')),
+    # path('',log),
+    path('', include(('home.urls', 'home'), namespace='home')),
 ]
+# 图片访问的路由
+from django.conf import settings
+from django.conf.urls.static import static
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
