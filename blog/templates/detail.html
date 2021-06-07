@@ -14,6 +14,7 @@
     <script src="../static/ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js"></script>
     <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
     <!--导入css-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'common/common.css' %}">
     <link rel="stylesheet" href="{% static 'common/jquery.pagination.css' %}">
     <!-- 引入vuejs -->
@@ -154,6 +155,7 @@
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}" data-ckeditor-basepath="{% static 'ckeditor/ckeditor/' %}" id="ckeditor-init-script"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 <!-- 引入js -->
+<script type="text/javascript" src="{% static 'js/st.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/host.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/common.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/detail.js' %}"></script>
@@ -164,7 +166,6 @@
             currentPage: {{ page_num }},
             totalPage: {{ total_page }},
             callback:function (current) {
-                {#/detail/?id=1&page_size=5&page_num=2#}
                 location.href = '/detail/?id={{ article.id }}&page_size={{ page_size }}&page_num='+current;
             }
         })

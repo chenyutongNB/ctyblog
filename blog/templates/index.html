@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!--导入css-->
     <link rel="stylesheet" href="{% static 'common/common.css' %}">
+{#    <link rel="stylesheet" href="{% static 'css/style.css' %}">#}
     <link rel="stylesheet" href="{% static 'common/jquery.pagination.css' %}">
     <!-- 引入vuejs -->
     <script type="text/javascript" src="{% static 'js/vue-2.5.16.js' %}"></script>
@@ -28,7 +29,7 @@
 
     <div class="container">
         <!-- 导航栏商标 -->
-        <div>
+        <div class="bj">
             <a class="navbar-brand" href="{% url 'home:index' %}">个人博客</a>
         </div>
         <!-- 分类 -->
@@ -87,7 +88,7 @@
                 <a  role="button" href="#" class="btn btn-sm mb-2 btn-warning">{{ article.category.title}}</a>
             <!-- 标签 -->
                 <span>
-                        <a href="#" class="badge badge-secondary">{{ article.tags.}}</a>
+                        <a href="#" class="badge badge-secondary">{{ article.tags}}</a>
                 </span>
                 <!-- 标题 -->
                 <h4>
@@ -126,6 +127,9 @@
 </div>
 
 <!-- 引入js -->
+
+<script type="text/javascript" src="{% static 'js/st.js' %}"></script>
+{#<script type="text/javascript" src="{% static 'js/st1.js' %}"></script>#}
 <script type="text/javascript" src="{% static 'js/host.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/common.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/index.js' %}"></script>

@@ -1,0 +1,68 @@
+/* 更改博客时间样式 */
+#app{
+    font-family: 'Montserrat', SimSun;
+    font-weight: normal;
+    color: #775cb2 !important;
+    border: dotted #f17171 2px;
+    font-size: 16px;
+}
+
+#blog-calender{
+ font-family: 'Montserrat';
+}
+
+/*阅读，收藏，评论数量*/
+.post-view-count{
+  color:blue
+}
+
+/*.post-comment-count{*/
+/*  color:green;*/
+/*}*/
+
+.post-digg-count{
+  color:red;
+}
+
+/* 为博客添加渐变背景 */
+body {
+    background-color: #efefef;
+    background-image: radial-gradient(ellipse farthest-corner at 20% 50%,palegoldenrod, blanchedalmond 70%, bisque);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center 0;
+    background-size: cover;
+ }
+
+ /* 更改博客的标题框以及标题字体颜色 */
+.postTitle,
+.postTitle a:link,
+.postTitle a:active {
+    border-left-color: #990000;
+    color: #990000;
+ }
+
+.postTitle a:active{
+    text-decoration: underline;
+ }
+
+.postTitle a:visited{
+    color:orangered;
+ }
+
+ #cb_post_title_url{
+    color: #990000;
+ }
+
+.postTitle2.vertical-middle{
+    color: #990000;
+}
+
+/* 不显示广告 */
+.c_ad_block{
+    display: none;
+}
+
+#ad_t2{
+    display:none;
+}
